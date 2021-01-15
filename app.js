@@ -2,12 +2,19 @@
 const express = require('express')
 // const body_parser = require('body-parser')
 const path = require('path')
+const mysql = require('mysql')
 
 const users = require('./users')
 
 const app = express()
 
 app.get('/api/users', (req, res)=> res.json(users))
+
+// fonction check if member with name existe in array and return true
+// const found = users.some(user=> user.name===req.params.name)// 
+// if(found){ process informations s}
+
+app.use('/api/users', require('./routes/api/users'))
 
 // set static folder
 app.use(express.static(path.join(__dirname, 'public')))

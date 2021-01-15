@@ -1,10 +1,17 @@
+// Library import
 const express = require('express')
-const body_parser = require('body-parser')
+// const body_parser = require('body-parser')
+const path = require('path')
 
-var app = express()
+const users = require('./users')
 
-app.get('/', (req, res)=>{
-    res.send('Hello Express')
-})
+const app = express()
 
-app.listen(5000)
+app.get('/api/users', (req, res)=> res.json(users))
+
+// set static folder
+app.use(express.static(path.join(__dirname, 'public')))
+
+const PORT = process.env.PORT || 5000
+
+app.listen(PORT, ()=>console.log(`Server runing on port ${PORT}`))

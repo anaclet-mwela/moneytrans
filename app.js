@@ -1,6 +1,5 @@
 // Library import
 const express = require('express')
-//const body_parser = require('body-parser')
 const path = require('path')
 
 // Importing routes

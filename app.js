@@ -1,22 +1,22 @@
 // Library import
 const express = require('express')
-// const body_parser = require('body-parser')
+//const body_parser = require('body-parser')
 const path = require('path')
-const mysql = require('mysql')
 
-const users = require('./users')
+// Importing routes
+let login = require('./routes/api/login')
+let register = require('./routes/api/register')
 
 const app = express()
 
-app.get('/api/users', (req, res)=> res.json(users))
+app.use(express.json())
+app.use(express.urlencoded({extended: false}))
 
-// fonction check if member with name existe in array and return true
-// const found = users.some(user=> user.name===req.params.name)// 
-// if(found){ process informations s}
+// using the routes
+app.use('/login', login)
+app.use('/register', register)
 
-app.use('/api/users', require('./routes/api/users'))
-
-// set static folder
+// set static folder is View of the MVC
 app.use(express.static(path.join(__dirname, 'public')))
 
 const PORT = process.env.PORT || 5000

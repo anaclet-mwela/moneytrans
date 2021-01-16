@@ -1,0 +1,28 @@
+ {
+    "id" : "1",
+    "phone_number": "+2760985647",
+    "pin_number": "23456",
+    "name" : {
+        "title": "Mr",
+        "first": "Jhon",
+        "last": "Doe"
+    },
+    "location": {
+        "country": "South Africa",
+        "province": "Western Cape",
+        "city": "cape town",
+        "adress": "34 mom street, Goodwood"
+    },
+    "documents":{
+        "id_doc": "url/to/id-doc",
+        "profile_picture": "url/to/profile_picture"
+    },
+    "is_activated": false,
+    "recipents": [
+        {
+            "phone": "+27153647",
+            "name": "Sammy",
+            "Country": "Congo RD"
+        }
+    ]
+}
